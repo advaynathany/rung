@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rung — teach every child from where they are</title>
+  <meta name="description" content="Rung is a free phone tool that helps teachers find each child's reading level in a minute, by voice, and teach them from there.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <a class="wordmark" href="#top" aria-label="Rung, home">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 3v22M21 3v22M7 9h14M7 16h14M7 23h14"/></svg>
+      Rung
+    </a>
+    <nav aria-label="Sections">
+      <a href="#ladder">The ladder</a>
+      <a href="#how">How it works</a>
+      <a href="#status">Status</a>
+      <a href="#join">Get involved</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <p class="hero-sentence" id="sentence" aria-label="The boy went to the market to buy rice.">
+        <span>The</span> <span>boy</span> <span>went</span> <span>to</span> <span>the</span> <span>market</span> <span>to</span> <span>buy</span> <span>rice.</span>
+      </p>
+      <h1>Seven in ten ten-year-olds in low- and middle-income countries can’t read and understand a simple sentence like this one.<sup><a href="#ref-1">1</a></sup></h1>
+      <p class="lede">We know how to fix it: find the level each child is actually at, and teach them from there. Teachers rarely get the time or support to do that for a class of fifty. Rung gives them a phone that does the measuring and planning, so they can do the teaching.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#join">Partner on the pilot</a>
+        <a class="btn" href="#how">See how it works</a>
+      </div>
+    </section>
+
+    <section class="ladder" id="ladder" aria-labelledby="ladder-title">
+      <h2 id="ladder-title">Every class is spread across five rungs</h2>
+      <p class="section-lede">In a typical grade 4 classroom, some children are reading stories while others can’t yet name letters. Teaching them all the grade 4 textbook leaves most of them behind. Pick a rung to see what a child there can read, and what their group does next.</p>
+
+      <div class="lang" role="group" aria-label="Sample language">
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" class="lang-btn" data-lang="hi" aria-pressed="false">हिन्दी</button>
+      </div>
+
+      <div class="ladder-wrap">
+        <div class="rungs" role="tablist" aria-label="Reading levels" aria-orientation="vertical">
+          <button role="tab" id="tab-story" aria-controls="panel" aria-selected="false" data-level="story" tabindex="-1"><span class="rung-name">Story</span></button>
+          <button role="tab" id="tab-paragraph" aria-controls="panel" aria-selected="false" data-level="paragraph" tabindex="-1"><span class="rung-name">Paragraph</span></button>
+          <button role="tab" id="tab-word" aria-controls="panel" aria-selected="true" data-level="word"><span class="rung-name">Words</span></button>
+          <button role="tab" id="tab-letter" aria-controls="panel" aria-selected="false" data-level="letter" tabindex="-1"><span class="rung-name">Letters</span></button>
+          <button role="tab" id="tab-beginner" aria-controls="panel" aria-selected="false" data-level="beginner" tabindex="-1"><span class="rung-name">Beginning</span></button>
+        </div>
+
+        <div class="panel" id="panel" role="tabpanel" aria-labelledby="tab-word" tabindex="0">
+          <p class="sample" id="sample"></p>
+          <dl>
+            <dt>A child on this rung</dt>
+            <dd id="can"></dd>
+            <dt>What their group does next</dt>
+            <dd id="next"></dd>
+          </dl>
+        </div>
+      </div>
+      <p class="note">Levels follow the reading tasks used by ASER and Teaching at the Right Level.<sup><a href="#ref-2">2</a></sup></p>
+    </section>
+
+    <section class="why" aria-labelledby="why-title">
+      <h2 id="why-title">Why this hasn’t been solved yet</h2>
+      <div class="prose">
+        <p>Grouping children by level instead of by grade, and spending an hour a day teaching each group at its level, is one of the most cost-effective ways known to raise learning. The World Bank’s evidence panel rates it a “great buy”.<sup><a href="#ref-3">3</a></sup></p>
+        <p>It stalls when it reaches ordinary government schools. Every child has to be assessed one by one, the class regrouped, a lesson planned for each group, and the teacher supported while they learn the method. Expert mentors are scarce and expensive, and teachers are already stretched.</p>
+        <p>That work is the part that has recently become cheap. Speech recognition can listen to a child read. Language models can turn results into a lesson plan and coach a teacher over a basic phone. In one World Bank trial in Nigeria, six weeks of AI-supported tutoring with a teacher in the room matched an estimated 1.5 to 2 years of ordinary schooling.<sup><a href="#ref-4">4</a></sup></p>
+      </div>
+    </section>
+
+    <section class="how" id="how" aria-labelledby="how-title">
+      <h2 id="how-title">How Rung works</h2>
+      <ol class="steps">
+        <li>
+          <h3>Check each child in a minute</h3>
+          <p>The child reads a short card aloud into the teacher’s phone. Rung listens and places them on a rung. A class of forty takes one period, and the check repeats every term.</p>
+        </li>
+        <li>
+          <h3>Group the class by level</h3>
+          <p>Rung sorts the class into groups and shows the teacher who sits where. Children move up as soon as they’re ready.</p>
+        </li>
+        <li>
+          <h3>Teach today’s lesson for each group</h3>
+          <p>Each morning the teacher gets a short, concrete plan for each group: games, cards and reading activities that need nothing beyond chalk and paper. Questions go to a coach that answers in the teacher’s language.</p>
+        </li>
+        <li>
+          <h3>Practise at home on a basic phone</h3>
+          <p>A short weekly voice call lets a child practise with a parent listening in. It works on any phone, with no data plan or app needed.</p>
+        </li>
+      </ol>
+      <p class="aside">The reading check also catches some children who simply can’t see the print. They’re flagged for an eye test, because a child with poor vision learns about half as much as a child who can see clearly.<sup><a href="#ref-5">5</a></sup></p>
+    </section>
+
+    <section class="commit" aria-labelledby="commit-title">
+      <h2 id="commit-title">What we promise about children’s voices</h2>
+      <ul class="plain">
+        <li>Recordings are scored on the phone where possible and deleted after scoring.</li>
+        <li>We store a child’s level, never their voice, face or full name.</li>
+        <li>Nothing is collected without a school’s agreement and a parent’s consent.</li>
+        <li>The tool and the methods are open source, and results are published whether they’re good or bad.</li>
+      </ul>
+    </section>
+
+    <section class="status" id="status" aria-labelledby="status-title">
+      <h2 id="status-title">Where we are</h2>
+      <p class="section-lede">Rung is pre-pilot. Nothing here has been tested with children yet, and the plan below is how we’ll find out whether it works.</p>
+      <ol class="timeline">
+        <li class="now"><span class="when">Late 2026</span><span class="what">Build the voice check in English and Hindi, then compare its scores with trained human assessors.</span></li>
+        <li><span class="when">Early 2027</span><span class="what">Add grouping, daily lessons and teacher coaching. Sign a school partner and get ethics approval.</span></li>
+        <li><span class="when">Spring 2027</span><span class="what">Pilot in about 20 schools, compared with 20 that don’t use Rung, over 50 teaching days.</span></li>
+        <li><span class="when">Late 2027</span><span class="what">Publish results and open-source the tool. Add languages and work toward adoption by a state school system.</span></li>
+      </ol>
+    </section>
+
+    <section class="join" id="join" aria-labelledby="join-title">
+      <h2 id="join-title">Help us get to the pilot</h2>
+      <ul class="who">
+        <li><h3>Schools and teachers</h3><p>Grade 2–5 classrooms willing to try Rung in the 2027 pilot.</p></li>
+        <li><h3>Researchers</h3><p>Help with trial design, ethics review, and assessing children’s reading in local languages.</p></li>
+        <li><h3>Engineers</h3><p>Speech recognition for children’s voices in low-resource languages is the hardest unsolved part.</p></li>
+        <li><h3>Funders and partners</h3><p>Teaching at the Right Level groups, education departments and foundations.</p></li>
+      </ul>
+      <a class="btn btn-primary" id="contact" href="mailto:CONTACT_EMAIL?subject=Rung">Write to us</a>
+    </section>
+
+    <section class="refs" aria-labelledby="refs-title">
+      <h2 id="refs-title">Sources</h2>
+      <ol>
+        <li id="ref-1">World Bank, <a href="https://www.worldbank.org/en/topic/education/brief/foundational-learning">Foundational learning</a> (2025 brief, citing the 2022 learning poverty estimate: 70%, up from 57% in 2019).</li>
+        <li id="ref-2">Pratham and ASER Centre, <a href="https://www.teachingattherightlevel.org/">Teaching at the Right Level</a>.</li>
+        <li id="ref-3">Global Education Evidence Advisory Panel, <a href="https://www.worldbank.org/en/news/press-release/2023/05/09/education-smart-buys-cost-effectively-supporting-teachers-and-parents-can-lead-to-significant-learning-improvements">2023 Education Smart Buys</a>.</li>
+        <li id="ref-4">De Simone et al., <a href="https://blogs.worldbank.org/en/education/From-chalkboards-to-chatbots-Transforming-learning-in-Nigeria">From chalkboards to chatbots</a>, World Bank (2025).</li>
+        <li id="ref-5">IAPB and Seva, <a href="https://www.iapb.org/wp-content/uploads/2024/09/Better-Education-In-Sight-Full-Report.pdf">Better Education In Sight</a> (2024).</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <p>Rung is an independent project started by Advay Nathany. The code is on <a href="https://github.com/advaynathany/rung">GitHub</a>.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

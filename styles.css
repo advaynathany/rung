@@ -1,0 +1,321 @@
+/* Rung — an exercise book: ruled lines, a red margin, fountain-pen ink. */
+
+:root {
+  --paper: #fbfcf8;
+  --paper-2: #eef3f9;
+  --ink: #1e2f8c;
+  --graphite: #23262d;
+  --muted: #555c6b;
+  --margin: #c8372d;
+  --rule: #c9d9ee;
+  --focus: #c8372d;
+
+  --read: "Andika", "Noto Sans Devanagari", system-ui, sans-serif;
+  --body: "Literata", Georgia, serif;
+  --deva: "Noto Sans Devanagari", "Andika", sans-serif;
+
+  --line: 2rem;          /* the ruled-line pitch */
+  --gutter: 7.5rem;      /* distance from left edge to the margin line */
+  --measure: 38rem;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121a33;
+    --paper-2: #1a2445;
+    --ink: #a9bcff;
+    --graphite: #e6e9f2;
+    --muted: #a3abc0;
+    --margin: #ff7a6e;
+    --rule: #26335c;
+    --focus: #ff7a6e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121a33;
+  --paper-2: #1a2445;
+  --ink: #a9bcff;
+  --graphite: #e6e9f2;
+  --muted: #a3abc0;
+  --margin: #ff7a6e;
+  --rule: #26335c;
+  --focus: #ff7a6e;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--graphite);
+  font: 400 1.0625rem/1.7 var(--body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* The red margin line runs the full height of the page. */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; bottom: 0;
+  left: calc(var(--gutter) - 1.25rem);
+  width: 2px;
+  background: var(--margin);
+  opacity: .55;
+  pointer-events: none;
+  z-index: 2;
+}
+
+a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+sup { line-height: 0; font-size: .6em; }
+sup a { text-decoration: none; font-family: var(--read); padding: 0 .1em; }
+
+.skip {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: var(--paper); padding: .5rem 1rem; z-index: 10;
+}
+.skip:focus { left: 1rem; }
+
+/* ---------- header ---------- */
+.site-head {
+  position: relative; z-index: 1;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 2rem 1.5rem var(--gutter);
+}
+.wordmark {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font: 700 1.5rem/1 var(--read);
+  color: var(--ink); text-decoration: none;
+}
+.wordmark svg { width: 1.4rem; height: 1.4rem; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+.site-head nav { display: flex; gap: 1.5rem; flex-wrap: wrap; font: 400 1rem/1.4 var(--read); }
+.site-head nav a { color: var(--graphite); text-decoration: none; }
+.site-head nav a:hover { color: var(--ink); text-decoration: underline; }
+
+/* ---------- sections ---------- */
+main { position: relative; z-index: 1; }
+section { padding: 4.5rem 2rem 4.5rem var(--gutter); }
+section > * { max-width: var(--measure); }
+
+h1, h2, h3 { font-family: var(--read); color: var(--graphite); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.2rem); line-height: 1.2; margin: 0 0 1rem; max-width: 30rem; }
+h3 { font-size: 1.15rem; line-height: 1.3; margin: 0 0 .35rem; }
+p { margin: 0 0 1rem; }
+.section-lede { color: var(--muted); margin-bottom: 2rem; }
+
+/* ---------- hero: the sentence on ruled paper ---------- */
+.hero {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--line) - 1px),
+    var(--rule) calc(var(--line) - 1px),
+    var(--rule) var(--line)
+  );
+  background-position: 0 1.4rem;
+}
+.hero-sentence {
+  max-width: 22ch;
+  margin: 0 0 2.5rem;
+  font: 400 clamp(2.6rem, 1.4rem + 5.2vw, 5.4rem)/1.12 var(--read);
+  color: var(--ink);
+  letter-spacing: -.005em;
+}
+.hero-sentence span {
+  background-image: linear-gradient(var(--margin), var(--margin));
+  background-repeat: no-repeat;
+  background-position: 0 92%;
+  background-size: 0 .09em;
+  transition: background-size .32s ease-out;
+}
+.hero-sentence span.read { background-size: 100% .09em; }
+.hero-sentence.done span { background-size: 0 .09em; transition-duration: .6s; }
+
+.hero h1 {
+  font: 400 clamp(1.25rem, 1.05rem + .7vw, 1.6rem)/1.45 var(--body);
+  max-width: 34rem;
+  margin: 0 0 1.25rem;
+}
+.lede { max-width: 34rem; color: var(--muted); margin-bottom: 2rem; }
+
+.actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  font: 700 1rem/1 var(--read);
+  padding: .9rem 1.3rem;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  color: var(--ink);
+  background: var(--paper);
+  text-decoration: none;
+}
+.btn:hover { background: var(--paper-2); }
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--ink); filter: brightness(1.15); }
+
+/* ---------- the ladder ---------- */
+.ladder { background: var(--paper-2); }
+.ladder > .ladder-wrap { max-width: 56rem; }
+
+.lang { display: inline-flex; border: 2px solid var(--ink); border-radius: 3px; margin-bottom: 1.5rem; }
+.lang-btn {
+  font: 400 .95rem/1 var(--read); padding: .55rem .9rem;
+  border: 0; background: transparent; color: var(--ink); cursor: pointer;
+}
+.lang-btn[data-lang="hi"] { font-family: var(--deva); }
+.lang-btn[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+.ladder-wrap {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Rails and rungs, drawn with borders: the buttons are the rungs. */
+.rungs {
+  position: relative;
+  display: flex; flex-direction: column;
+  border-left: 3px solid var(--ink);
+  border-right: 3px solid var(--ink);
+  padding: .5rem 0;
+}
+.rungs button {
+  position: relative;
+  display: block; width: 100%;
+  padding: 1.1rem .75rem .45rem;
+  border: 0; border-bottom: 3px solid var(--ink);
+  background: transparent; cursor: pointer;
+  color: var(--muted);
+  font: 400 1rem/1.2 var(--read);
+  text-align: center;
+}
+.rungs button:hover { color: var(--ink); }
+.rungs button[aria-selected="true"] { color: var(--ink); font-weight: 700; }
+/* A teacher's red tick beside the selected rung. */
+.rungs button[aria-selected="true"]::after {
+  content: "";
+  position: absolute; right: -2.4rem; bottom: .2rem;
+  width: 1.5rem; height: 1.1rem;
+  background: var(--margin);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 18'%3E%3Cpath d='M2 10l6 6L22 2' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 18'%3E%3Cpath d='M2 10l6 6L22 2' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.panel {
+  background: var(--paper);
+  border-left: 2px solid var(--margin);
+  padding: 1.75rem 2rem;
+  min-height: 21rem;
+}
+.sample {
+  font: 400 clamp(1.4rem, 1.1rem + 1.2vw, 2rem)/1.5 var(--read);
+  color: var(--ink);
+  margin: 0 0 1.5rem;
+  min-height: 3em;
+}
+.sample.letters { letter-spacing: .6em; }
+.sample.small { font-size: clamp(1.1rem, 1rem + .5vw, 1.3rem); line-height: 1.7; }
+.sample:lang(hi) { font-family: var(--deva); }
+.sample.empty { color: var(--muted); font-style: italic; font-family: var(--body); font-size: 1.15rem; }
+.panel dl { margin: 0; }
+.panel dt { font: 700 .95rem/1.3 var(--read); color: var(--graphite); margin-top: 1rem; }
+.panel dd { margin: .25rem 0 0; }
+
+.note { color: var(--muted); font-size: .95rem; margin-top: 1.5rem; }
+
+/* ---------- prose and steps ---------- */
+.prose p { max-width: var(--measure); }
+
+.steps { list-style: none; padding: 0; margin: 0; counter-reset: step; max-width: 44rem; }
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 2rem 0;
+}
+/* Step numbers sit in the margin, the way you number answers in an exercise book. */
+.steps li::before {
+  content: counter(step) ".";
+  position: absolute;
+  left: -4.25rem; top: -.05rem;
+  width: 2.75rem; text-align: right;
+  font: 700 1.35rem/1.3 var(--read);
+  color: var(--margin);
+}
+.aside {
+  max-width: 40rem;
+  padding: 1rem 1.25rem;
+  background: var(--paper-2);
+  border-radius: 3px;
+}
+
+.plain { padding-left: 1.2rem; margin: 0; }
+.plain li { margin-bottom: .5rem; }
+
+/* ---------- timeline ---------- */
+.timeline { list-style: none; margin: 0; padding: 0; max-width: 44rem; }
+.timeline li {
+  display: grid; grid-template-columns: 8rem 1fr; gap: 1.5rem;
+  padding: .9rem 0;
+  border-top: 1px solid var(--rule);
+}
+.timeline li:last-child { border-bottom: 1px solid var(--rule); }
+.timeline .when { font: 700 1rem/1.5 var(--read); color: var(--muted); }
+.timeline .now .when { color: var(--margin); }
+.timeline .now .when::after { content: " (now)"; font-weight: 400; }
+
+/* ---------- join ---------- */
+.join { background: var(--paper-2); }
+.who {
+  list-style: none; margin: 0 0 2rem; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 2.5rem;
+  max-width: 48rem;
+}
+.who p { color: var(--muted); margin: 0; }
+
+/* ---------- refs and footer ---------- */
+.refs { padding-top: 3rem; font-size: .95rem; color: var(--muted); }
+.refs h2 { font-size: 1.15rem; }
+.refs ol { padding-left: 1.4rem; margin: 0; max-width: 46rem; }
+.refs li { margin-bottom: .4rem; }
+.refs li:target { background: var(--paper-2); outline: 2px solid var(--rule); }
+
+.site-foot {
+  position: relative; z-index: 1;
+  padding: 2rem 2rem 3rem var(--gutter);
+  font-size: .95rem; color: var(--muted);
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 760px) {
+  :root { --gutter: 2.25rem; }
+  body::before { left: 1rem; }
+  section { padding: 3.25rem 16px 3.25rem var(--gutter); }
+  .site-head { padding: 1.25rem 16px 1rem var(--gutter); }
+  .site-foot { padding: 1.5rem 16px 2.5rem var(--gutter); }
+  .site-head nav { gap: 1rem; font-size: .95rem; }
+  .ladder-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+  .rungs { max-width: 15rem; }
+  .rungs button[aria-selected="true"]::after { right: -2.1rem; }
+  .panel { padding: 1.25rem; min-height: 0; }
+  .steps li { padding-left: 2.25rem; }
+  .steps li::before { left: -.25rem; width: 2rem; text-align: left; }
+  .timeline li { grid-template-columns: 1fr; gap: .1rem; }
+  .who { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sentence span { transition: none; }
+}
