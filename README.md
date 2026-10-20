@@ -18,5 +18,7 @@ python3 -m http.server 8000
 ## Files
 
 - `index.html`: the page
-- `styles.css`: design tokens (exercise-book palette) and layout
-- `script.js`: hero reading animation and the interactive ladder
+- `styles.css`: self-hosted font faces, design tokens and layout ("The Divided Blackboard")
+- `script.js`: slate, wood and chalk-grain textures drawn at load, the chalk-line reveal, the group spotlight and the English/Hindi samples
+- `fonts/`: Kalam and Hind (woff2, Latin and Devanagari subsets)
+- `PRODUCT.md`, `DESIGN.md`: product truth and the visual system

@@ -1,1 +1,4 @@
 .DS_Store
+# design-process files (direction contract, mocks, review captures) stay local; Pages serves the repo root
+.impeccable/*
+!.impeccable/design.json
