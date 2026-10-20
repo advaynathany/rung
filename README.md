@@ -13,7 +13,6 @@ python3 -m http.server 8000
 
 ## Before publishing
 
-- Replace `CONTACT_EMAIL` in `index.html` with the address people should write to.
 - Publish with GitHub Pages: Settings → Pages → Deploy from branch → `main` / root.
 
 ## Files
