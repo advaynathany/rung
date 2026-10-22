@@ -1,6 +1,6 @@
 // Keeps the prototype working without a connection once it has loaded.
-const CACHE = "rung-try-v1";
-const FILES = ["./", "index.html", "app.css", "app.js", "ladders.js", "manifest.webmanifest", "../favicon.svg",
+const CACHE = "rung-try-v2";
+const FILES = ["./", "index.html", "app.css", "app.js", "ladders.js", "ladders-upper.js", "manifest.webmanifest", "../favicon.svg",
   "../fonts/hind-400-latin.woff2", "../fonts/hind-400-devanagari.woff2", "../fonts/hind-600-latin.woff2",
   "../fonts/hind-600-devanagari.woff2", "../fonts/kalam-700-latin.woff2", "../fonts/kalam-700-devanagari.woff2"];
 

@@ -132,6 +132,13 @@
       paragraph: { name: "Subtraction", sample: "52 − 17", task: "Share things equally", can: "subtracts with borrowing but can’t yet divide.", do: "Share piles of stones equally between friends and write each share as a division." },
       story: { name: "Division", sample: "684 ÷ 4", task: "Solve word problems", can: "divides a three-digit number by a one-digit number, the top rung.", do: "Solve and write word problems from shopping and the market, then move on to the grade textbook." },
     },
+    writing: {
+      beginning: { name: "Beginning", sample: "cow  big", task: "Say a sentence, then write it", can: "writes single words or copies text, but not yet whole sentences of their own.", do: "Talk about a picture in whole sentences, then write one, checking it says who did what." },
+      letters: { name: "Sentences", sample: "I saw a cow. It was big.", task: "Join ideas with because and so", can: "writes complete simple sentences, but as separate thoughts.", do: "Join pairs of sentences with and, but, because and so, then write about a festival using two of them." },
+      words: { name: "Paragraph", sample: "Yesterday I go to the market and we buyed rice.", task: "Keep the tense steady", can: "writes connected sentences on one topic, but tense and spelling slip.", do: "Rewrite a present-tense paragraph in the past tense, then underline every verb in their own writing about yesterday." },
+      paragraph: { name: "Controlled", sample: "Yesterday my mother and I went to the market. First we bought rice, then a pumpkin.", task: "Show, don’t tell", can: "writes organised, mostly correct paragraphs, but in plain, safe words.", do: "Turn “She was scared” into “Her hands wouldn’t stop shaking”, then write a feeling without naming it." },
+      story: { name: "Crafted", sample: "The market roared before we even reached it, and the pumpkin seller was the loudest of all.", task: "Write for a real reader", can: "chooses words and sentence shapes for effect, the top rung.", do: "Plan and write a letter to a real reader about a real problem, then revise it with a partner’s feedback." },
+    },
   };
   let subject = "reading", lang = "en";
 
@@ -187,13 +194,14 @@
   function paint() {
     tabs.forEach((t) => {
       const key = t.dataset.g, s = t.querySelector(".g-sample");
-      const m = subject === "maths" ? GROUPS.maths[key] : null;
+      const m = subject !== "reading" ? GROUPS[subject][key] : null;
       t.querySelector(".g-name").textContent = m ? m.name : READING[key].name;
       t.querySelector(".g-task").textContent = m ? m.task : READING[key].task;
       s.textContent = m ? m.sample : s.dataset[lang];
       if (!m && lang === "hi") s.setAttribute("lang", "hi"); else s.removeAttribute("lang");
     });
-    if (langBox) langBox.hidden = subject === "maths";
+    if (langBox) langBox.hidden = subject !== "reading";
+    cols.dataset.subj = subject;
     const cur = tabs.find((t) => t.getAttribute("aria-selected") === "true");
     if (cur) show(cur, false);
   }

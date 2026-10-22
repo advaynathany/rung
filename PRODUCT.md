@@ -18,7 +18,7 @@ Two audiences, weighted equally:
 
 ## Product Purpose
 
-Rung is an open method plus a free phone tool that lets any school teach every child from the level they're actually at, in reading and maths, without joining a programme. Pick a ladder (one skill in five rungs), check each child in about a minute, group the class by rung, teach a protected daily block with a plan per group, and recheck every ten school days. It exists because 70% of 10-year-olds in low- and middle-income countries can't read a simple text (World Bank, 2022). Teaching at the Right Level is proven to help, but it usually arrives as a programme with trainers and mentors, and most schools will never be in one. The method is written up in METHOD.md (CC BY 4.0); the prototype lives at /try.
+Rung is an open method plus a free phone tool that lets any school teach every child from the level they're actually at, in reading and maths, without joining a programme. Pick ladders (reading, arithmetic, comprehension, writing; each one skill in five rungs), give each child a rung on every ladder (a profile), check each child individually (writing from a photo of their page, optionally read by AI), group the class by rung, teach a protected daily block with a plan per group, and recheck every ten school days. It exists because 70% of 10-year-olds in low- and middle-income countries can't read a simple text (World Bank, 2022). Teaching at the Right Level is proven to help, but it usually arrives as a programme with trainers and mentors, and most schools will never be in one. The method is written up in METHOD.md (CC BY 4.0); the prototype lives at /try.
 
 Success means more children reaching the top rung within one school term, at a cost a government can afford.
 

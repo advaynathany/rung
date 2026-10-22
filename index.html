@@ -34,7 +34,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-text">
         <h1 id="hero-title"><span>One class.</span> <span>Five rungs.</span> <span>A lesson for each.</span></h1>
-        <p class="sub">In most grade 4 classrooms, some children are reading stories while others can’t yet name a letter. Rung is a free method and phone tool any school can run: check each child in a minute, sort the class into level groups, and get a short lesson for every group, every day. Reading and maths to start.</p>
+        <p class="sub">In most grade 4 classrooms, some children are reading stories while others can’t yet name a letter. Rung is a free method and phone tool any school can run: check each child in a minute, sort the class into level groups, and get a short lesson for every group, every day. From first letters and numbers to confident writing.</p>
         <div class="actions">
           <a class="chalk-btn primary" href="try/">Try the prototype</a>
           <a class="chalk-btn" href="#how">Read the method</a>
@@ -60,6 +60,7 @@
           <div class="lang subj" role="group" aria-label="Ladder">
             <button type="button" data-subj="reading" aria-pressed="true">Reading</button>
             <button type="button" data-subj="maths" aria-pressed="false">Maths</button>
+            <button type="button" data-subj="writing" aria-pressed="false">Writing</button>
           </div>
           <div class="lang" id="lang" role="group" aria-label="Language of the sample lines">
             <button type="button" data-lang="en" aria-pressed="true">English</button>
@@ -100,7 +101,7 @@
           <p><b class="who">A child in this group</b> <span id="d-can"></span></p>
           <p><b class="who">Today’s lesson</b> <span id="d-do"></span></p>
         </div>
-        <p class="board-note">The levels are adapted from the reading and arithmetic tasks used by ASER and Teaching at the Right Level.<a class="ref" href="#s2">2</a> The sample lines are illustrations, not a real class.</p>
+        <p class="board-note">The reading and maths levels are adapted from the tasks used by ASER and Teaching at the Right Level; the writing levels are Rung’s own.<a class="ref" href="#s2">2</a> The sample lines are illustrations, not a real class.</p>
       </section>
 
       <section class="problem" aria-labelledby="problem-title">
@@ -119,11 +120,11 @@
 
       <section class="how" id="how" aria-labelledby="how-title">
         <h2 id="how-title">The Rung method</h2>
-        <p class="lead">Pick a ladder: one skill, like reading or arithmetic, broken into five rungs. Then, every two weeks:</p>
+        <p class="lead">Pick your ladders: skills like reading, arithmetic, comprehension and writing, each broken into five rungs. Every child gets a rung on every ladder. Then, every two weeks:</p>
         <ol class="steps">
           <li>
             <h3>Check each child</h3>
-            <p>One child at a time, about a minute each, on the teacher’s phone or with paper cards. Start in the middle of the ladder, go up while they pass, and place them on the highest rung they pass. Results from checks that already run, like Wadhwani AI’s Vaachan Samiksha, could feed in instead.<a class="ref" href="#s4">4</a></p>
+            <p>One child at a time, about a minute each, on the teacher’s phone or with paper cards. Start in the middle of the ladder, go up while they pass, and place them on the highest rung they pass. For writing, the teacher photographs each child’s page, and AI suggests the rung, a strength and one next step. Results from checks that already run, like Wadhwani AI’s Vaachan Samiksha, could feed in instead.<a class="ref" href="#s4">4</a></p>
           </li>
           <li>
             <h3>Group the class by rung</h3>
@@ -138,7 +139,7 @@
             <p>Every ten school days, recheck and move children up the moment they’re ready. A child on the top rung goes back to grade-level work.</p>
           </li>
         </ol>
-        <p class="aside">A few rules are fixed, because the evidence rests on them: individual checks, groups by level rather than grade, a daily block, regular rechecks. Everything else, from the language to who leads a group, is yours to change. Anyone can write a ladder for a new language or skill. The method is <a href="https://github.com/advaynathany/rung/blob/main/METHOD.md">written up in full</a> and free to use and adapt under CC BY 4.0. Rung isn’t Teaching at the Right Level and has no connection to Pratham. If your school can join a TaRL programme, do.</p>
+        <p class="aside">A few rules are fixed, because the evidence rests on them: individual checks, groups by level rather than grade, a daily block, regular rechecks. Everything else, from the language to who leads a group, is yours to change. Anyone can write a ladder for a new language or skill. The method is <a href="https://github.com/advaynathany/rung/blob/main/METHOD.md">written up in full</a> and free to use and adapt under CC BY 4.0. The strongest evidence is for foundational reading and maths; the comprehension and writing ladders are an extension we still have to test. Rung isn’t Teaching at the Right Level and has no connection to Pratham. If your school can join a TaRL programme, do.</p>
         <a class="chalk-btn" href="try/">Try the prototype</a>
       </section>
 
@@ -151,7 +152,7 @@
             <li>Recordings are scored on the phone where possible and deleted after scoring.</li>
             <li>We keep a child’s level, never their voice, face or full name.</li>
             <li>Nothing is collected without a school’s agreement and a parent’s consent.</li>
-            <li>The prototype keeps everything on the teacher’s phone and sends nothing anywhere.</li>
+            <li>The prototype keeps everything on the teacher’s phone. The one exception is AI marking, if a teacher turns it on: the photo of a page is read, not kept, and the child’s name is never sent.</li>
             <li>The tool is open source, and pilot results are published whether they’re good or bad.</li>
           </ul>
         </div>
@@ -161,11 +162,12 @@
         <h2 id="status-title">Where we are</h2>
         <p class="lead">Rung is pre-pilot. It hasn’t been tested with children yet. This is the plan for finding out whether it works.</p>
         <ol class="plan">
-          <li class="now"><span class="when">Late 2026</span><span class="what">Publish the method and a working prototype: reading in English and Hindi, and arithmetic. Interview teachers inside and outside TaRL programmes, and check the ladders against trained assessors.</span><span class="here" aria-label="We are here">we are here</span></li>
+          <li class="now"><span class="when">Late 2026</span><span class="what">Publish the method and a working prototype: reading, arithmetic, comprehension and writing, with AI reading of handwritten pages. Interview teachers inside and outside TaRL programmes, and check the ladders and the AI marking against trained assessors.</span><span class="here" aria-label="We are here">we are here</span></li>
           <li><span class="when">Early 2027</span><span class="what">Lessons adapted by AI to each language and classroom, coaching over a basic phone, and home practice. Sign school partners and get ethics approval.</span></li>
           <li><span class="when">Spring 2027</span><span class="what">Pilot in about 20 schools, compared with 20 that don’t use Rung, over 50 teaching days.</span></li>
           <li><span class="when">Late 2027</span><span class="what">Publish the results, add ladders and languages, and work toward adoption by a state school system.</span></li>
         </ol>
+        <p class="board-note">This is the next year. The <a href="https://github.com/advaynathany/rung/blob/main/ROADMAP.md">full roadmap</a> runs from here, v2, to v50: learning for every person, in any language, for life.</p>
       </section>
 
       <section class="join" id="join" aria-labelledby="join-title">

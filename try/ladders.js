@@ -244,8 +244,8 @@
   };
 
   window.RUNG_LADDERS = {
-    "read-en": { id: "read-en", name: "Reading in English", short: "Reading (English)", rungs: READING_RUNGS, start: 3, cards: CARDS["read-en"], lessons: READING_LESSONS, lang: "en" },
-    "read-hi": { id: "read-hi", name: "Reading in Hindi", short: "Reading (Hindi)", rungs: READING_RUNGS, start: 3, cards: CARDS["read-hi"], lessons: READING_LESSONS, lang: "hi", draft: true },
-    maths: { id: "maths", name: "Arithmetic", short: "Arithmetic", rungs: MATHS_RUNGS, start: 2, cards: CARDS.maths, lessons: MATHS_LESSONS, lang: "en" },
+    "read-en": { id: "read-en", family: "read", kind: "oral", name: "Reading in English", short: "Reading (English)", rungs: READING_RUNGS, start: 3, cards: CARDS["read-en"], lessons: READING_LESSONS, lang: "en" },
+    "read-hi": { id: "read-hi", family: "read", kind: "oral", name: "Reading in Hindi", short: "Reading (Hindi)", rungs: READING_RUNGS, start: 3, cards: CARDS["read-hi"], lessons: READING_LESSONS, lang: "hi", draft: true },
+    maths: { id: "maths", family: "maths", kind: "oral", name: "Arithmetic", short: "Arithmetic", rungs: MATHS_RUNGS, start: 2, cards: CARDS.maths, lessons: MATHS_LESSONS, lang: "en" },
   };
 })();

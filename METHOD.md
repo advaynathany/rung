@@ -1,8 +1,8 @@
 # The Rung method
 
-A way for any school to teach every child from the level they're actually at, in reading and maths, without joining a programme.
+A way for any school to teach every child from the level they're actually at, from first letters and numbers to confident comprehension and writing, without joining a programme.
 
-Version 0.1, October 2026. Draft. Not yet tested with children.
+Version 0.2, October 2026. Draft. Not yet tested with children.
 
 ---
 
@@ -20,7 +20,7 @@ TaRL usually reaches a school as a programme, with trainers, mentors and materia
 
 ## The method in one paragraph
 
-Pick a **ladder**: one skill, such as reading or arithmetic, broken into four to six rungs. **Check** each child one at a time, in about a minute, and place them on the highest rung they pass. **Group** the class by rung. **Teach** each group at its rung in a protected block every school day. **Recheck** every two weeks and move children up. When a child reaches the top rung, they're done with the ladder.
+Pick one or more **ladders**: a skill, such as reading, arithmetic, comprehension or writing, broken into four to six rungs. **Check** each child on each ladder and place them on the highest rung they reach. Every child ends up with a **profile**: a rung on each ladder. **Group** the class by rung on one ladder at a time. **Teach** each group at its rung in a protected block every school day. **Recheck** every two weeks and move children up. When a child reaches the top rung of a ladder, they're done with it.
 
 ---
 
@@ -31,12 +31,13 @@ The evidence for this approach comes from a few specific design choices. Change 
 **Fixed (the rules)**
 
 1. A ladder has 4 to 6 rungs. Each rung is a task a child does aloud or on paper, with a pass rule that two teachers would score the same way.
-2. Every child is checked individually, not with a written class test.
-3. Children are grouped by rung, never by grade or age. A group has one rung.
+2. Every child is checked individually: one-to-one for oral ladders, or from their own page of writing for the writing ladder. Never by a class test score.
+3. Children are grouped by rung, never by grade or age. A group has one rung, on one ladder. A block works on one ladder at a time.
 4. Teaching happens in a protected daily block of at least 30 minutes, ideally an hour, on the timetable every school day.
 5. In the block, each group works on activities for its own rung. Children spend more time doing (speaking, reading, solving) than listening.
 6. Every child is rechecked at least every 10 school days. A child moves up as soon as they pass the next rung.
-7. A child who passes the top rung leaves the block and goes back to grade-level work.
+7. A child who passes the top rung of a ladder leaves that ladder's block and goes back to grade-level work.
+8. Comprehension and writing start only once a child reaches the top of foundations reading. Before that, every minute goes to learning to read.
 
 **Flexible (yours to change)**
 
@@ -45,6 +46,7 @@ The evidence for this approach comes from a few specific design choices. Change 
 - Who leads a group: the teacher, a second teacher, a volunteer or an older student.
 - When the block happens and how long it is, above 30 minutes.
 - Whether the check is done on a phone, on paper cards, or imported from an assessment you already run.
+- Whether a writing check is marked by the teacher alone or with AI suggesting a rung. The teacher always decides.
 - Materials. Every activity in the library needs only chalk, paper and things found in a classroom.
 
 ---
@@ -53,7 +55,11 @@ The evidence for this approach comes from a few specific design choices. Change 
 
 A ladder is ordered: a child who passes a rung should also pass every rung below it. Rung 0 is always "Beginning", for children who don't yet pass rung 1. It has no check of its own.
 
-The two starter ladders are adapted from the reading and arithmetic tasks used by [ASER Centre](https://asercentre.org/) and TaRL.
+Ladders come in two kinds. **Foundations** ladders (reading and arithmetic) cover the skills most children in low- and middle-income countries are missing, and they're adapted from the tasks used by [ASER Centre](https://asercentre.org/) and TaRL. **Beyond foundations** ladders (comprehension and writing) cover the spread you find in a class where everyone can read: who understands what they read, who can analyse it, and whose writing is in control.
+
+### A profile, not a level
+
+No child has one level. A child can read fluently, infer well and still write in loose sentences with tenses that slip. So Rung keeps a rung for every ladder, and a profile is the set of them. The profile is how a teacher sees a class; the groups for any one block still come from one ladder, so the teacher never manages more than four or five groups at a time.
 
 ### Reading
 
@@ -80,6 +86,36 @@ The check starts at Paragraph.
 | 4 | Division | One 3-digit by 1-digit division, on paper | Correct |
 
 The check starts at Numbers 10–99.
+
+### Comprehension
+
+For children at the top of foundations reading. The child reads a short story (about 120 words) and keeps it in front of them; the teacher asks one question per rung.
+
+| Rung | Name | Question asks the child to | Pass rule |
+|---|---|---|---|
+| 0 | Beginning | — | Doesn't pass Retells |
+| 1 | Retells | Say what happened | Main events right, in their own words |
+| 2 | Infers | Explain why something happened | A reason the story supports but doesn't state |
+| 3 | Analyses | Compare, trace a change, or explain a writer's choice | Points to something in the story as evidence |
+| 4 | Evaluates | Judge or reimagine the story | Takes a clear position with a reason |
+
+The check starts at Infers.
+
+### Writing
+
+For children at the top of foundations reading. The whole class writes to one prompt for about 15 minutes, and each page is placed on the ladder. This is the one check that isn't one-to-one, because the evidence is the child's own writing.
+
+| Rung | Name | What the page shows |
+|---|---|---|
+| 0 | Beginning | Single words, lists or copied text; no complete sentences of the child's own |
+| 1 | Sentences | Complete simple sentences, each a separate thought |
+| 2 | Paragraph | Connected sentences on one topic, in order; tense, spelling or punctuation often slip |
+| 3 | Controlled | A clear beginning, middle and end; tense mostly consistent; spelling and punctuation mostly correct; varied sentence starts |
+| 4 | Crafted | Words and sentence shapes chosen for effect; a voice of its own; few errors |
+
+Alongside the rung, each child gets one **strength** and one **next step**, such as "keep every verb in the past tense when you write about yesterday". The group works on its rung's lesson; each child's next step is what they work on in the "on their own" part of the block. That's how the method differentiates within a group without fifty separate plans.
+
+**AI marking.** Reading forty pages carefully every two weeks is the part teachers can't find time for. The tool can read a photo of each page and suggest the rung, a strength, a next step and short notes on sentences, organisation, grammar and tense, spelling and punctuation, and vocabulary. The teacher accepts or changes the rung. AI marking is optional; the method works without it.
 
 ### Writing a new ladder
 
@@ -135,7 +171,7 @@ Each rung has a set of day plans in this shape. The tool rotates through them an
 
 ## 5. Recheck and move up
 
-- Recheck every child at least every 10 school days, starting one rung above where they are.
+- Recheck every child at least every 10 school days, starting one rung above where they are. Writing rechecks use a new prompt each round.
 - Move children up as soon as they pass. Children are never moved down because of one bad day: if a child fails a rung they had passed before, they stay where they are and are checked again next round.
 - The tool shows the head teacher how many children are on each rung after every round. That chart is the measure of whether the block is working.
 
@@ -144,7 +180,7 @@ Each rung has a set of day plans in this shape. The tool rotates through them an
 ## 6. Children's data
 
 - A child's record is a first name (or a number) and a list of check dates and rungs. Nothing else.
-- In the prototype, all of this stays on the teacher's phone and is never sent anywhere.
+- In the prototype, all of this stays on the teacher's phone. The one exception is AI marking, if the teacher switches it on: the photo of a page is sent to the AI provider to be read and isn't kept by Rung. The child's name is never sent, and children write only a first name, or nothing, on the page.
 - Any future version that syncs data will need the school's agreement and parents' consent first, and will never store children's voices, faces or full names.
 
 ---
@@ -154,6 +190,8 @@ Each rung has a set of day plans in this shape. The tool rotates through them an
 - Whether teachers can run the method from written rules and a phone tool alone, without the mentoring that TaRL programmes provide. This is the central question.
 - Whether the new ladders (and the Hindi materials in particular) are ordered correctly and fair to children. They need review by native speakers and trial with children.
 - How much of the gain from TaRL survives when the block is shorter, or when it is led by one teacher with a large class.
+- Whether the beyond-foundations ladders help. The strong evidence for teaching at the right level is for foundational reading and arithmetic. Comprehension and writing ladders are a reasonable extension, not a proven one.
+- How often AI marking agrees with experienced teachers, and whether it is fair to children writing in a second language. This has to be measured before anyone relies on it.
 
 The plan to find out: interview teachers inside and outside TaRL programmes (late 2026), test the ladders against trained assessors, then run a pilot of about 20 schools compared with 20 (spring 2027) and publish the results whatever they show.
 
