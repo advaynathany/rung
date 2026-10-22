@@ -102,27 +102,38 @@
 
   // ---- The groups: pick one to read its lesson; the others dim. ----
   const GROUPS = {
-    beginning: {
-      can: "recognises some shapes and sounds but can’t yet name most letters.",
-      do: "Ten minutes of sound games and songs, then tracing letters in chalk on the floor, until each letter has a name and a sound.",
+    reading: {
+      beginning: {
+        can: "recognises some shapes and sounds but can’t yet name most letters.",
+        do: "Ten minutes of sound games and songs, then tracing letters in chalk on the floor, until each letter has a name and a sound.",
+      },
+      letters: {
+        can: "names most letters but can’t yet join them into words.",
+        do: "Blending with letter cards: two sounds, then three, until the cards spell a word the child already says every day.",
+      },
+      words: {
+        can: "reads simple words one at a time but stumbles when they’re joined into sentences.",
+        do: "Build short sentences from word cards, read them to a partner, and reread the same short text until it’s smooth.",
+      },
+      paragraph: {
+        can: "reads a few connected sentences slowly and can say what they were about.",
+        do: "Read a short story aloud in pairs, retell it in their own words, and answer what happened and why.",
+      },
+      story: {
+        can: "reads a grade 2 story with understanding, the level every child should reach by about age ten.",
+        do: "Write and read out their own short stories, then move on to the grade textbook.",
+      },
     },
-    letters: {
-      can: "names most letters but can’t yet join them into words.",
-      do: "Blending with letter cards: two sounds, then three, until the cards spell a word the child already says every day.",
-    },
-    words: {
-      can: "reads simple words one at a time but stumbles when they’re joined into sentences.",
-      do: "Build short sentences from word cards, read them to a partner, and reread the same short text until it’s smooth.",
-    },
-    paragraph: {
-      can: "reads a few connected sentences slowly and can say what they were about.",
-      do: "Read a short story aloud in pairs, retell it in their own words, and answer what happened and why.",
-    },
-    story: {
-      can: "reads a grade 2 story with understanding, the level every child should reach by about age ten.",
-      do: "Write and read out their own short stories, then move on to the grade textbook.",
+    // Maths reuses the five columns; each entry renames its column.
+    maths: {
+      beginning: { name: "Beginning", sample: "● ● ●", task: "Count real things", can: "can’t yet name most numbers from 1 to 9.", do: "Count stones and sticks out loud, match each pile to a number card, and walk a number line drawn on the floor." },
+      letters: { name: "Numbers 1–9", sample: "7  2  9  4", task: "Make tens from bundles", can: "names numbers 1 to 9 but not yet two-digit numbers.", do: "Tie sticks into bundles of ten and build numbers like 34 from three bundles and four loose sticks." },
+      words: { name: "Numbers 10–99", sample: "34 · 71 · 58", task: "Take away with bundles", can: "names two-digit numbers but can’t yet subtract with borrowing.", do: "Act out take-away stories with bundles, opening a bundle of ten when there aren’t enough loose sticks." },
+      paragraph: { name: "Subtraction", sample: "52 − 17", task: "Share things equally", can: "subtracts with borrowing but can’t yet divide.", do: "Share piles of stones equally between friends and write each share as a division." },
+      story: { name: "Division", sample: "684 ÷ 4", task: "Solve word problems", can: "divides a three-digit number by a one-digit number, the top rung.", do: "Solve and write word problems from shopping and the market, then move on to the grade textbook." },
     },
   };
+  let subject = "reading", lang = "en";
 
   const tabs = Array.from(document.querySelectorAll('.cols [role="tab"]'));
   const panel = document.getElementById("detail");
@@ -136,7 +147,7 @@
       t.setAttribute("aria-selected", String(on));
       t.tabIndex = on ? 0 : -1;
     });
-    const g = GROUPS[tab.dataset.g];
+    const g = GROUPS[subject][tab.dataset.g];
     dCan.textContent = g.can;
     dDo.textContent = g.do;
     panel.setAttribute("aria-labelledby", tab.id);
@@ -166,16 +177,33 @@
   const initial = tabs.find((t) => t.getAttribute("aria-selected") === "true") || tabs[0];
   if (initial) show(initial, false);
 
-  // ---- Sample language ----
-  const langBtns = Array.from(document.querySelectorAll(".lang button"));
-  langBtns.forEach((btn) => {
+  // ---- Ladder and sample language ----
+  const READING = {};
+  tabs.forEach((t) => {
+    READING[t.dataset.g] = { name: t.querySelector(".g-name").textContent, task: t.querySelector(".g-task").textContent };
+  });
+  const langBox = document.getElementById("lang");
+
+  function paint() {
+    tabs.forEach((t) => {
+      const key = t.dataset.g, s = t.querySelector(".g-sample");
+      const m = subject === "maths" ? GROUPS.maths[key] : null;
+      t.querySelector(".g-name").textContent = m ? m.name : READING[key].name;
+      t.querySelector(".g-task").textContent = m ? m.task : READING[key].task;
+      s.textContent = m ? m.sample : s.dataset[lang];
+      if (!m && lang === "hi") s.setAttribute("lang", "hi"); else s.removeAttribute("lang");
+    });
+    if (langBox) langBox.hidden = subject === "maths";
+    const cur = tabs.find((t) => t.getAttribute("aria-selected") === "true");
+    if (cur) show(cur, false);
+  }
+
+  document.querySelectorAll(".lang button").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const lang = btn.dataset.lang;
-      langBtns.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
-      document.querySelectorAll(".g-sample").forEach((s) => {
-        s.textContent = s.dataset[lang];
-        if (lang === "hi") s.setAttribute("lang", "hi"); else s.removeAttribute("lang");
-      });
+      btn.parentElement.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+      if (btn.dataset.subj) subject = btn.dataset.subj;
+      if (btn.dataset.lang) lang = btn.dataset.lang;
+      paint();
     });
   });
 })();

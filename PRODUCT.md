@@ -18,18 +18,18 @@ Two audiences, weighted equally:
 
 ## Product Purpose
 
-Rung helps a teacher with a large mixed-level class teach every child from the reading level they're actually at. It takes the results of a reading check, groups the children by level, and gives the teacher a short daily lesson plan for each group, coaching over a basic phone, and home practice by voice call. It exists because 70% of 10-year-olds in low- and middle-income countries can't read a simple text (World Bank, 2022). Teaching at the Right Level is proven to fix this, but it stalls in ordinary schools because teachers lack the time and support to assess, regroup and plan.
+Rung is an open method plus a free phone tool that lets any school teach every child from the level they're actually at, in reading and maths, without joining a programme. Pick a ladder (one skill in five rungs), check each child in about a minute, group the class by rung, teach a protected daily block with a plan per group, and recheck every ten school days. It exists because 70% of 10-year-olds in low- and middle-income countries can't read a simple text (World Bank, 2022). Teaching at the Right Level is proven to help, but it usually arrives as a programme with trainers and mentors, and most schools will never be in one. The method is written up in METHOD.md (CC BY 4.0); the prototype lives at /try.
 
-Success means more children reaching the story rung within one school term, at a cost a government can afford.
+Success means more children reaching the top rung within one school term, at a cost a government can afford.
 
 ## Positioning
 
-Rung is the layer that comes after the reading check. Voice-based reading assessment already exists at scale (Wadhwani AI's Vaachan Samiksha in Gujarat), and so do reading apps for children (Google Read Along). Rung works with a partner's check, or its own, and handles what the teacher does next: groups, lessons, coaching and home practice. It does not claim to be the first or only voice reading check.
+Rung is not TaRL and has no connection to Pratham: it writes down the same published principles as open rules any school can run. A few rules are fixed because the evidence rests on them (individual checks, groups by level, a daily block, regular rechecks); language, ladders and who leads are flexible. Existing checks such as Wadhwani AI's Vaachan Samiksha could feed in as a data source, but Rung has its own check and doesn't depend on any partner.
 
 ## Operating Context
 
 - Teachers have one smartphone, often shared, plus chalk and paper. Classes have 40–60 children across five reading levels.
-- The levels follow ASER and Teaching at the Right Level: beginning, letters, words, paragraph, story.
+- Starter ladders, adapted from ASER and TaRL: reading (beginning, letters, words, paragraph, story) and arithmetic (beginning, numbers 1–9, numbers 10–99, subtraction, division).
 - Parents often have basic phones only.
 - Languages planned first: English and Hindi.
 
@@ -53,7 +53,7 @@ Cited third-party evidence only: World Bank learning poverty, GEEAP 2023 "great 
 
 1. Meet each child at their rung, not their grade.
 2. The teacher teaches; Rung does the measuring and the planning.
-3. Build on what exists. Partner with existing reading checks rather than compete.
+3. Fixed where the evidence is, flexible everywhere else.
 4. Honesty over hype: show the stage, the uncertainty and the sources.
 5. Children's data is minimal, local and consented.
 

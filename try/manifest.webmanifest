@@ -1,0 +1,11 @@
+{
+  "name": "Rung",
+  "short_name": "Rung",
+  "description": "Check, group and teach every child from the rung they're on.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#22332b",
+  "theme_color": "#22332b",
+  "icons": [{ "src": "../favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

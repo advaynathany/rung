@@ -382,3 +382,7 @@ p { margin: 0 0 1rem; }
   .col { grid-template-columns: 5.6rem 1fr; }
   .ledge { margin-left: calc(var(--frame) * -1); margin-right: calc(var(--frame) * -1); }
 }
+
+/* ladder and language toggles sit together above the board */
+.toggles { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; align-items: center; }
+.lang[hidden] { display: none; }
